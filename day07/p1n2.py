@@ -15,14 +15,8 @@ def bitwise_op(wire_a, gate, wire_b):
         return wire_a << wire_b
     elif gate == 'RSHIFT':
         return wire_a >> wire_b
-    # python's bitwise compliment doesn't
-    # handle signed numbers, so I had
-    # to write my own
     elif gate == 'NOT':
-        if wire_b == 0:
-            return 1
-        return (1 << wire_b.bit_length()) - 1 - wire_b
-
+        return ~wire_b
 
 @lru_cache(maxsize=None)
 def execute_circuit(wire):
