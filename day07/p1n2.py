@@ -18,6 +18,7 @@ def bitwise_op(wire_a, gate, wire_b):
     elif gate == 'NOT':
         return ~wire_b
 
+
 @lru_cache(maxsize=None)
 def execute_circuit(wire):
     """Returns signal of wire as an integer.
